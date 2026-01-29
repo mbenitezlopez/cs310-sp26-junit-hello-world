@@ -6,17 +6,19 @@ import static org.junit.Assert.*;
 public class ExampleTest {
 
     private Main main;
-    private String expectedGreeting, expectedReverseGreeting;
+    private String expectedGreeting, expectedReverseGreeting, expectedGreeting2;
     private String expectedReverse1, expectedReverse2, expectedReverse3;
     
     @Before
     public void setUp() {
         main = new Main();
         expectedGreeting = "Hello, World!";
+        expectedGreeting2 = "Im a little teapot";
         expectedReverseGreeting = "!dlroW ,olleH";
         expectedReverse1 = "topaeT elttiL a m'I";
         expectedReverse2 = "elddiD elddiD yeH";
         expectedReverse3 = "kcoD yrokciD yrokciH";
+        
     }
         
     @Test
@@ -31,6 +33,11 @@ public class ExampleTest {
         assertEquals(expectedReverseGreeting, actual);
     }
     
+    @Test
+    public void test2ndGreeting() {
+        String actual = main.getGreeting2();
+        assertEquals(expectedGreeting2, actual);
+    }
     @Test
     public void testReverseMessage1() {
         String actual = main.reverse("I'm a Little Teapot");

@@ -6,9 +6,11 @@ public class Main {
         
         Main m = new Main();
         String message = m.getGreeting();
+        String message2 = m.getGreeting2();
         
         System.out.println(message);
         System.out.println(m.reverse(message));
+        System.out.println(message2);
         
     }
     
@@ -16,8 +18,14 @@ public class Main {
         return "Hello, World!";
     }
     
+    public String getGreeting2() {
+        return "Im a little teapot";
+    }
+    
     public String reverse(String message) {
-        return message;
+        StringBuilder sb = new StringBuilder(message);
+        sb.reverse();
+        return sb.toString();
     }
     
 }
